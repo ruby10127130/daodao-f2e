@@ -50,12 +50,6 @@ function GroupDetail({ id, source, isLoading }) {
             ) : (
               <StyledStatus className="finished">已結束</StyledStatus>
             )}
-            <ShareButtonGroup
-              title={source?.title}
-              text={source?.description}
-              url={window.location.href}
-              hashtag={source?.hashtag}
-            />
           </Box>
           {isMyGroup ? (
             <StyledDesktopEditButton
@@ -74,8 +68,16 @@ function GroupDetail({ id, source, isLoading }) {
         <StyledPaper sx={{ mb: '10px' }}>
           <TeamInfoCard data={source} isLoading={isLoading} />
         </StyledPaper>
-        <StyledPaper>
+        <StyledPaper sx={{ mb: '10px' }}>
           <OrganizerCard data={source} isLoading={isLoading} />
+        </StyledPaper>
+        <StyledPaper>
+          <ShareButtonGroup
+            title={source?.title}
+            text={source?.description}
+            url={window.location.href}
+            hashtag={source?.hashtag}
+          />
         </StyledPaper>
         <Box
           sx={{
